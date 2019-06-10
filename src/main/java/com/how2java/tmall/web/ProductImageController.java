@@ -79,6 +79,9 @@ public class ProductImageController {
             String imageFolder_middle = request.getServletContext().getRealPath("img/productSingle_middle");
             File f_small = new File(imageFolder_small, fileName);
             File f_middle = new File(imageFolder_middle, fileName);
+
+            f_small.getParentFile().mkdirs();
+            f_middle.getParentFile().mkdirs();
             //设置文件大小
             ImageUtil.resizeImage(file, 56, 56, f_small);
             ImageUtil.resizeImage(file, 217, 190, f_middle);
@@ -100,7 +103,6 @@ public class ProductImageController {
         }
 
         File imageFolder = new File(request.getServletContext().getRealPath(folder));
-        System.out.println("-----------"+request.getServletContext().getRealPath(folder));
         File file = new File(imageFolder, bean.getId() + ".jpg");
         //文件名
         String fileName = file.getName();

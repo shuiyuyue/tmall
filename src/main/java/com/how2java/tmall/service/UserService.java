@@ -27,8 +27,8 @@ public class UserService {
     public Page4Navigator<User> list(int start, int size, int navigatePages) {
         Sort sort = new Sort(Sort.Direction.DESC,"id");
         Pageable pageable = new PageRequest(start, size, sort);
-        Page pageFormJPA = userDao.findAll(pageable);
-        return new Page4Navigator<>(pageFormJPA, navigatePages);
+        Page pageFromJPA = userDao.findAll(pageable);
+        return new Page4Navigator<>(pageFromJPA, navigatePages);
     }
 
     public void add(User user) {

@@ -76,7 +76,7 @@
 <div id="workingArea">
     <ol class="breadcrumb">
         <li><a href="admin_category_list">所有分类</a></li>
-        <li><a href="'admin_property_list?cid='+category.id">{{category.name}}</a></li>
+        <li><a :href="'admin_property_list?cid='+category.id">{{category.name}}</a></li>
         <li class="active">属性管理</li>
     </ol>
     <div class="listDataTableDiv">
@@ -92,7 +92,9 @@
             <tbody>
                 <tr v-for="bean in beans">
                     <td>{{bean.id}}</td>
-                    <td>{{bean.name}}</td>
+                    <td>
+                        {{bean.name}}
+                    </td>
                     <td>
                         <a :href="'admin_property_edit?id=' + bean.id "><span class="glyphicon glyphicon-edit"></span>编辑</a>
                     </td>

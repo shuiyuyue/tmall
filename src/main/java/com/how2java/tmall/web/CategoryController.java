@@ -29,7 +29,6 @@ public class CategoryController {
         start=start < 0 ? 0 : start;
         //Page4Navigator是封装的工具类 ，5表示导航分页最多有5个，像 [1,2,3,4,5] 这样
         Page4Navigator<Category> page = categoryService.list(start, size, 5);
-        System.out.println(page);
         return page;
     }
 
@@ -40,7 +39,7 @@ public class CategoryController {
         return bean;
     }
 
-    private void saveOrUpdateImageFile(Category bean, MultipartFile image, HttpServletRequest request) throws IOException {
+    public void saveOrUpdateImageFile(Category bean, MultipartFile image, HttpServletRequest request) throws IOException {
         //上传文件的位置
         File imageFolder = new File(request.getServletContext().getRealPath("img/category"));
         //上传文件的位置及名称

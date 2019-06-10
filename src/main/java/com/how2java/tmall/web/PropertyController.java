@@ -6,6 +6,8 @@ import com.how2java.tmall.util.Page4Navigator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class PropertyController {
     @Autowired
@@ -30,7 +32,7 @@ public class PropertyController {
         return bean;
     }
     @DeleteMapping("/properties/{id}")
-    public String delete(@PathVariable("id")int id){
+    public String delete(@PathVariable("id")int id,HttpServletRequest request){
         propertyService.delete(id);
         return null;
     }

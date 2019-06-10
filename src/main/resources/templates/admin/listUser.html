@@ -9,7 +9,7 @@
             uri:'users',
             beans:[],
             pagination:{}
-        }
+        };
 
         var vue = new Vue({
             el: '#workingArea',
@@ -23,7 +23,7 @@
                     axios.get(url).then(function (response) {
                         vue.pagination = response.data;
                         vue.beans = response.data.content;
-                    })
+                    });
                 },
                 jump:function (page) {
                     jump(page, vue);

@@ -37,7 +37,7 @@ public class ForeRESTController {
         return cs;
     }
 
-    @PostMapping
+    @PostMapping("/foreregister")
     public Object register(@RequestBody User user) {
         String name = user.getName();
         String password = user.getPassword();
@@ -45,7 +45,7 @@ public class ForeRESTController {
         name = HtmlUtils.htmlEscape(name);
 
         user.setName(name);
-        Boolean exist = userService.isExist(name);
+        boolean exist = userService.isExist(name);
 
         if (exist) {
             String message = "用户名已经被注册，再想个吧";

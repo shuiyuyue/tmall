@@ -14,4 +14,6 @@ public interface ProductDAO extends JpaRepository<Product,Integer> {
 
     //根据分类查询所有商品信息，不需要分页
     List<Product> findByCategoryOrderById(Category category);
+    //根据名称模糊查询
+    List<Product> findByNameLike(String keyword, Pageable pageable);
 }

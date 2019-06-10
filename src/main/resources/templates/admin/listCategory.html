@@ -26,8 +26,7 @@
                     var url =  this.uri+ "?start="+start;
                     axios.get(url).then(function(response) {
                         vue.pagination = response.data;
-                        vue.beans = response.data.content   ;
-                        $.each()
+                        vue.beans = response.data.content;
                     });
                 },
                 add: function () {
@@ -53,7 +52,6 @@
                         return;
                     var url = this.uri+"/"+id;
                     axios.delete(url).then(function(response){
-                        console.log(response);
                         if(0!=response.data.length){
                             alert(response.data);
                         }

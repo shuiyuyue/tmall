@@ -4,9 +4,9 @@ public class Result {
 	public static int SUCCESS_CODE = 0;
 	public static int FAIL_CODE = 1;
 	
-	int code;
-	String message;
-	Object data;
+	int code;	//状态码，0成功
+	String message;	//message，信息
+	Object data;	//数据
 	
 	private Result(int code, String message, Object data) {
 		this.code = code;
